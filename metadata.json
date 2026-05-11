@@ -1,0 +1,6 @@
+{
+  "name": "Linh - Your Patient English Teacher",
+  "description": "A friendly AI teacher to help you practice English speaking with Vietnamese support and gentle guidance.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["AI-powered English tutor", "Voice-to-voice conversation", "Bilingual English-Vietnamese explanations"]
+}

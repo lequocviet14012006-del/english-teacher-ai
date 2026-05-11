@@ -1,0 +1,55 @@
+:root {
+    --primary-olive: #545e46; 
+    --bg-color: #f5f5f5;
+    --chat-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #888888;
+}
+
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); margin: 0; display: flex; justify-content: center; height: 100vh; }
+.app-container { width: 100%; max-width: 800px; background-color: var(--bg-color); display: flex; flex-direction: column; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+
+/* HEADER */
+.header { background-color: white; text-align: center; padding: 15px; font-weight: 500; color: var(--text-main); border-bottom: 1px solid #eaeaea; }
+
+/* KHUNG CHAT */
+.chat-area { flex-grow: 1; padding: 30px; overflow-y: auto; scroll-behavior: smooth; }
+.ai-message-block { display: flex; gap: 15px; margin-bottom: 25px; }
+.avatar { width: 45px; height: 45px; background-color: var(--primary-olive); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-family: serif; font-style: italic; flex-shrink: 0;}
+.msg-content { background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); width: 100%; }
+.msg-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.ai-info h3 { margin: 0; font-size: 16px; color: var(--primary-olive); font-family: serif; }
+.ai-info p { margin: 0; font-size: 10px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+.text-body { line-height: 1.6; color: var(--text-main); font-size: 15px; }
+.text-body hr { border: none; border-top: 1px solid #eee; margin: 15px 0; }
+.text-body b { color: var(--primary-olive); }
+.user-message-block { text-align: right; margin-bottom: 25px; color: var(--text-muted); font-style: italic; }
+
+/* NÚT REPLAY VOICE */
+.replay-btn { display: inline-flex; align-items: center; color: #a0a0a0; font-size: 13px; font-weight: 500; cursor: pointer; margin-top: 15px; transition: 0.2s; }
+.replay-btn:hover { color: var(--primary-olive); }
+.replay-btn span { font-size: 18px; margin-right: 5px; }
+
+/* KHUNG NHẬP LIỆU & NÚT BẤM */
+.input-area { background-color: white; padding: 20px 30px; border-top: 1px solid #eaeaea; }
+.input-box { display: flex; align-items: center; background-color: var(--bg-color); border-radius: 30px; padding: 10px 20px; gap: 15px; flex-grow: 1;}
+.input-box input { flex-grow: 1; border: none; background: transparent; outline: none; font-size: 15px; color: var(--text-main); }
+#btn-send { cursor: pointer; color: #ccc; transition: 0.2s; }
+#btn-send:hover { color: var(--primary-olive); }
+
+.mic-btn { width: 50px; height: 50px; background-color: var(--primary-olive); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; box-shadow: 0 4px 10px rgba(84, 94, 70, 0.3); transition: 0.3s; margin-left: 10px; flex-shrink: 0;}
+
+/* Hiệu ứng khi đang thu âm */
+.mic-btn.recording { background-color: #28a745; animation: pulse 1.5s infinite; }
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+/* Nút Hủy (Nói sai) */
+#btn-cancel-mic { background-color: #dc3545; display: none; }
+#btn-cancel-mic:hover { background-color: #c82333; }
+
+.footer-text { text-align: center; font-size: 11px; color: var(--text-muted); font-style: italic; margin-top: 15px; }
+#error-log { color: red; text-align: center; font-size: 12px; margin-top: 5px; }
